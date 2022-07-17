@@ -1,7 +1,5 @@
 function [ solution ] = IntersectLineWithFeasibleSet(feasible_set, x_bar, x_tilde)
 
-
-
 switch feasible_set.type
     case 'polyhedron'
         n = feasible_set.n;
@@ -65,14 +63,13 @@ switch feasible_set.type
                 lowerbound = - b_coef / (2 * a_coef);
                 upperbound = - b_coef / (2 * a_coef);
             else
-                lowerbound = 1; upperbound = 1;
-%                 error('Line does not pierce intersection of ellipsoids')
+                break; % Line does not pierce
             end
         end
         
         % Find farthest of the two intersection points
         if upperbound < lowerbound
-            error('Line does not pierce intersection of ellipsoids')
+            solution = zeros(size(x_tilde)); % Line does not pierce
         elseif abs(upperbound) > abs(lowerbound)
             solution = upperbound * x_tilde + ( 1 - upperbound ) * x_bar;
         else
@@ -95,14 +92,14 @@ switch feasible_set.type
                 lowerbound = max(lowerbound, (d(i) - D(i,:)*x_bar) / (D(i,:) * (x_tilde - x_bar)));
             else
                 if d(i) - D(i,:)*x_bar < 0
-                    error('Line does not pierce polyhedron')
+                    break; % Line does not pierce
                 end
             end
         end
         
         % Find farthest of the two intersection points
         if upperbound < lowerbound
-            error('Line does not pierce polyhedron')
+            solution = zeros(size(x_tilde)); % Line does not pierce
         elseif abs(upperbound) > abs(lowerbound)
             solution = upperbound * x_tilde + ( 1 - upperbound ) * x_bar;
         else
@@ -121,7 +118,4 @@ switch feasible_set.type
         
 end
 
-
-
 end
-

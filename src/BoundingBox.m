@@ -39,7 +39,7 @@ for i = 1 : feasible_set.n
     end
 end
 
-start_line_cons = intersect_line_with_feasible_set(feasible_set, objective.x_bar_cons, x_tilde);
+start_line_cons = IntersectLineWithFeasibleSet(feasible_set, objective.x_bar_cons, x_tilde);
 start_direction_cons = feasible_set.max_linear(x_tilde - objective.x_bar_cons);
 start_gradient_cons = feasible_set.max_linear(objective.grad(x_tilde));
 
