@@ -7,26 +7,11 @@ Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](
 
 The software and data in this repository are a snapshot of the software and data
 that were used in the research reported on in the paper 
-[An Algorithm for maximizing a convex function based on its minimum]() by Aharon Ben-Tal and Ernst Roos
+*An Algorithm for maximizing a convex function based on its minimum* by Aharon Ben-Tal and Ernst Roos
 
 ## Cite
 
-To cite this software, please cite the [paper](https://doi.org/10.1287/ijoc.2019.0934) using its DOI and the software itself, using the following DOI.
-
-[![DOI](https://zenodo.org/badge/285853815.svg)](https://zenodo.org/badge/latestdoi/285853815)
-
-Below is the BibTex for citing this version of the code.
-
-```
-@article{comax2022,
-  author =        {Ben-Tal, Aharon and Roos, Ernst},
-  publisher =     {INFORMS Journal on Computing},
-  title =         {An Algorithm for maximizing a convex function based on its minimum},
-  year =          {2022},
-  doi =           {10.5281/zenodo.3977566},
-  url =           {https://github.com/INFORMSJoC/JoCTemplate},
-}  
-```
+The final version of this repository, with updated bibliographical information, is available at [GitHub](https://github.com/INFORMSJoC/2022.0034).
 
 ## Description
 
