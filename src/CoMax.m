@@ -61,7 +61,7 @@ elseif n <= 100
     N = 5 + 10 + comax_settings.N;
     groups = [0, 5, 15, 15 + comax_settings.N];
 else
-    startMethods = {'Box', 'AnalyticCenter'};
+    startMethods = {'Box', 'Analytic Center'};
     N = 5 + 10;
     groups = [0, 5, 15];
 end
