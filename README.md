@@ -1,13 +1,13 @@
 [![INFORMS Journal on Computing Logo](https://INFORMSJoC.github.io/logos/INFORMS_Journal_on_Computing_Header.jpg)](https://pubsonline.informs.org/journal/ijoc)
 
-# CacheTest
+# An Algorithm for maximizing a convex function based on its minimum
 
 This archive is distributed in association with the [INFORMS Journal on
 Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](LICENSE).
 
 The software and data in this repository are a snapshot of the software and data
 that were used in the research reported on in the paper 
-[This is a Template](https://doi.org/10.1287/ijoc.2019.0934) by Aharon Ben-Tal and Ernst Roos
+[An Algorithm for maximizing a convex function based on its minimum](https://doi.org/10.1287/ijoc.2019.0934) by Aharon Ben-Tal and Ernst Roos
 
 ## Cite
 
@@ -38,7 +38,7 @@ free academic licenses are available.
 
 ## Usage
 
-The software can be ran via the "RunInstances" function that takes a directory name as
+The software can be ran via the `RunInstances` function that takes a directory name as
 input. It will solve all instances in the specified folder. Instances should be provided
 as ".mat" files with two variables with the following specification:
 * objective - Structure that describes the objective through these fields:
@@ -49,6 +49,48 @@ as ".mat" files with two variables with the following specification:
   * random_boundary   - Function that returns a random point on the boundary of the feasible set.
   * n                 - Dimension of the feasible set.
   
+For example, running 
+`RunInstances("..\Data\Table 1\")`
+will run all instances used to generate the results in Table 4, which will output the following:
+```
+Processing Instance 1
+------------------------------------------------
+Best Value found: 394.751 
+Total time spent: 2.241 
+------------------------------------------------
+Processing Instance 2
+------------------------------------------------
+Best Value found: 884.751 
+Total time spent: 2.162 
+------------------------------------------------
+Processing Instance 3
+------------------------------------------------
+Best Value found: 4674.677 
+Total time spent: 1.782 
+------------------------------------------------
+Processing Instance 4
+------------------------------------------------
+Best Value found: 175705.589 
+Total time spent: 2.026 
+------------------------------------------------
+Processing Instance 5
+------------------------------------------------
+Best Value found: 692613.047 
+Total time spent: 3.802 
+------------------------------------------------
+Processing Instance 6
+------------------------------------------------
+Best Value found: 6020787.416 
+Total time spent: 5.186 
+------------------------------------------------
+Processing Instance 7
+------------------------------------------------
+Best Value found: 1855739.984 
+Total time spent: 6.196 
+------------------------------------------------
+```
+as well as the content of Table 4.
+  
 ## Replicating
 
 To replicate the results in any of the tables in the paper, simply run the "RunInstances"  
@@ -57,4 +99,4 @@ function on the relevant sub directory in the instances directory.
 ## Support
 
 For support in using this software, submit an
-[issue](https://github.com/tkralphs/JoCTemplate/issues/new).
+[issue](https://github.com/INFORMSJoC/2022.0034/issues/new).
