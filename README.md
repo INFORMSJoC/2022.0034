@@ -7,14 +7,7 @@ Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](
 
 The software and data in this repository are a snapshot of the software and data
 that were used in the research reported on in the paper 
-[This is a Template](https://doi.org/10.1287/ijoc.2019.0934) by T. Ralphs. 
-The snapshot is based on 
-[this SHA](https://github.com/tkralphs/JoCTemplate/commit/f7f30c63adbcb0811e5a133e1def696b74f3ba15) 
-in the development repository. 
-
-**Important: This code is being developed on an on-going basis at 
-https://github.com/tkralphs/JoCTemplate. Please go there if you would like to
-get a more recent version or would like support**
+[This is a Template](https://doi.org/10.1287/ijoc.2019.0934) by Aharon Ben-Tal and Ernst Roos
 
 ## Cite
 
@@ -25,11 +18,11 @@ To cite this software, please cite the [paper](https://doi.org/10.1287/ijoc.2019
 Below is the BibTex for citing this version of the code.
 
 ```
-@article{CacheTest,
-  author =        {T. Ralphs},
+@article{comax2022,
+  author =        {Ben-Tal, Aharon and Roos, Ernst},
   publisher =     {INFORMS Journal on Computing},
-  title =         {{CacheTest} Version v1.0},
-  year =          {2020},
+  title =         {An Algorithm for maximizing a convex function based on its minimum},
+  year =          {2022},
   doi =           {10.5281/zenodo.3977566},
   url =           {https://github.com/INFORMSJoC/JoCTemplate},
 }  
@@ -37,66 +30,29 @@ Below is the BibTex for citing this version of the code.
 
 ## Description
 
-The goal of this software is to demonstrate the effect of cache optimization.
+The goal of this software is to maximize convex functions over a convex feasible set.
 
-## Building
+The software is written in MATLAB and uses the publically available YALMIP package 
+(https://yalmip.github.io/), and the MOSEK solver (https://www.mosek.com/). For the latter,
+free academic licenses are available.
 
-In Linux, to build the version that multiplies all elements of a vector by a
-constant (used to obtain the results in [Figure 1](results/mult-test.png) in the
-paper), stepping K elements at a time, execute the following commands.
+## Usage
 
-```
-make mult
-```
-
-Alternatively, to build the version that sums the elements of a vector (used
-to obtain the results [Figure 2](results/sum-test.png) in the paper), stepping K
-elements at a time, do the following.
-
-```
-make clean
-make sum
-```
-
-Be sure to make clean before building a different version of the code.
-
-## Results
-
-Figure 1 in the paper shows the results of the multiplication test with different
-values of K using `gcc` 7.5 on an Ubuntu Linux box.
-
-![Figure 1](results/mult-test.png)
-
-Figure 2 in the paper shows the results of the sum test with different
-values of K using `gcc` 7.5 on an Ubuntu Linux box.
-
-![Figure 1](results/sum-test.png)
-
+The software can be ran via the "RunInstances" function that takes a directory name as
+input. It will solve all instances in the specified folder. Instances should be provided
+as ".mat" files with two variables with the following specification:
+* objective - Structure that describes the objective through these fields:
+  * f         - Function handle that evaluates the objective function at a given input x.
+  * grad      - Function handle that evaluates the gradient of the objective function at a given input x.
+* feasible_set - Structure that describes the feasible set through these fields:
+  * max_linear        - Function that maximizes a linear function with the first argument as coefficients over the feasible set and returns the optimal solution. 
+  * random_boundary   - Function that returns a random point on the boundary of the feasible set.
+  * n                 - Dimension of the feasible set.
+  
 ## Replicating
 
-To replicate the results in [Figure 1](results/mult-test), do either
-
-```
-make mult-test
-```
-or
-```
-python test.py mult
-```
-To replicate the results in [Figure 2](results/sum-test), do either
-
-```
-make sum-test
-```
-or
-```
-python test.py sum
-```
-
-## Ongoing Development
-
-This code is being developed on an on-going basis at the author's
-[Github site](https://github.com/tkralphs/JoCTemplate).
+To replicate the results in any of the tables in the paper, simply run the "RunInstances"  
+function on the relevant sub directory in the instances directory.
 
 ## Support
 
