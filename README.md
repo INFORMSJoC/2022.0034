@@ -7,7 +7,7 @@ Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](
 
 The software and data in this repository are a snapshot of the software and data
 that were used in the research reported on in the paper 
-*An Algorithm for maximizing a convex function based on its minimum* by Aharon Ben-Tal and Ernst Roos
+[*An Algorithm for maximizing a convex function based on its minimum*](https://doi.org/10.1287/ijoc.2022.1238) by Aharon Ben-Tal and Ernst Roos
 
 ## Cite
 
