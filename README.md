@@ -11,9 +11,7 @@ that were used in the research reported on in the paper
 
 ## Cite
 
-To cite this material, please cite this repository, using the following DOI.
-
-[![DOI](https://zenodo.org/badge/507803837.svg)](https://zenodo.org/badge/latestdoi/507803837)
+To cite this material, please cite this repository, using the following DOI: [10.1287/ijoc.2022.1238.cd](https://doi.org/10.1287/ijoc.2022.1238.cd)
 
 Below is the BibTex for citing this version of the code.
 
@@ -23,7 +21,7 @@ Below is the BibTex for citing this version of the code.
   publisher =     {INFORMS Journal on Computing},
   title =         {An Algorithm for maximizing a convex function based on its minimum},
   year =          {2022},
-  doi =           {10.5281/zenodo.6884872},
+  doi =           {10.1287/ijoc.2022.1238.cd},
   url =           {https://github.com/INFORMSJoC/2022.0034},
 }  
 ```
